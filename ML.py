@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
 import pickle
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -492,3 +491,4 @@ if submitted:
 
 st.divider()
 st.caption("Tip: If you want batch predictions, add a file uploader and apply the same engineer_features() before transform.")
+
