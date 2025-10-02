@@ -1,12 +1,16 @@
 import pandas as pd
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend for deployment
+import matplotlib.pyplot as plt
 import seaborn as sns
 import pickle
 import warnings
-
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
+
+# Set matplotlib to non-GUI backend for deployment
+plt.ioff()
 
 df=pd.read_csv("spam.csv",encoding="latin-1")
 
@@ -327,4 +331,5 @@ with open("model.pkl", "wb") as f:
     pickle.dump(best_model, f)
 
 print("\n✅ Saved best model to model.pkl and preprocessor to vectorizer.pkl")
+
 print("Top models by PR_AUC/F1/Accuracy:\n", perf_sorted[["Algorithm","PR_AUC","F1","Accuracy"]].head(5))
