@@ -5,8 +5,6 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-# Set matplotlib to non-GUI backend for deployment
-plt.ioff()
 
 df=pd.read_csv("spam.csv",encoding="latin-1")
 
@@ -491,4 +489,5 @@ if submitted:
 
 st.divider()
 st.caption("Tip: If you want batch predictions, add a file uploader and apply the same engineer_features() before transform.")
+
 
