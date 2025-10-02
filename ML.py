@@ -1,8 +1,5 @@
 import pandas as pd
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')  # Use non-interactive backend for deployment
-import matplotlib.pyplot as plt
 import seaborn as sns
 import pickle
 import warnings
@@ -331,7 +328,6 @@ with open("model.pkl", "wb") as f:
     pickle.dump(best_model, f)
 
 print("\n✅ Saved best model to model.pkl and preprocessor to vectorizer.pkl")
-
 print("Top models by PR_AUC/F1/Accuracy:\n", perf_sorted[["Algorithm","PR_AUC","F1","Accuracy"]].head(5))
 
 
@@ -496,6 +492,3 @@ if submitted:
 
 st.divider()
 st.caption("Tip: If you want batch predictions, add a file uploader and apply the same engineer_features() before transform.")
-
-
-
